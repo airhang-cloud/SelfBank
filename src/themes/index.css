@@ -1,8 +1,14 @@
 /*菜单栏主题相关变量*/
-
 .theme-light {
     --bac-color: #fff
 }
 .theme-dark {
     --bac-color: #000
+}
+
+/*基于tdesign二次定制*/
+.t-menu__item{
+    box-sizing: border-box;
+    padding: 24px !important;
+    border-radius: 200px !important;
 }

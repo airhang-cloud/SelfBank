@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TAside: typeof import('tdesign-vue-next')['Aside']
+    TColorPickerPanel: typeof import('tdesign-vue-next')['ColorPickerPanel']
     TContent: typeof import('tdesign-vue-next')['Content']
     TIcon: typeof import('tdesign-vue-next')['Icon']
     TLayout: typeof import('tdesign-vue-next')['Layout']

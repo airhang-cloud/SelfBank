@@ -25,7 +25,8 @@
         <template #title>
           <span>账单管理</span>
         </template>
-        <t-menu-item value="3-1-1"> 我的账本</t-menu-item>
+        <t-menu-item value="3-1-1">
+          我的账本</t-menu-item>
       </t-submenu>
       <t-menu-item value="analysis">
         <template #icon>
@@ -61,4 +62,12 @@ const changeCollapsed2 = () => {
 const expanded = ref(['2', '3']);
 const expanded2 = ref(['2']);
 
+const pathConfigs = [
+  {
+    path: '/',
+    label: '',
+    icon: '',
+    subArr: []
+  }
+]
 </script>
