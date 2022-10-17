@@ -1,0 +1,8 @@
+/*菜单栏主题相关变量*/
+
+.theme-light {
+    --bac-color: #fff
+}
+.theme-dark {
+    --bac-color: #000
+}

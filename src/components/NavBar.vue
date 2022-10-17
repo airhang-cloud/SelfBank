@@ -2,7 +2,7 @@
   <div class="box">
     <t-menu
         v-model:expanded="expanded"
-        theme="light"
+        :theme="store.state.theme"
         default-value="3-2"
         expand-mutex
         height="550px"
@@ -61,7 +61,7 @@
 
 <script setup>
 import {ref} from 'vue';
-
+import store from "../store";
 const collapsed = ref(false);
 const collapsed2 = ref(false);
 
@@ -75,4 +75,5 @@ const changeCollapsed2 = () => {
 
 const expanded = ref(['2', '3']);
 const expanded2 = ref(['2']);
+
 </script>

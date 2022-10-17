@@ -1,90 +1,52 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
+* {
+    padding: 0;
+    margin: 0;
+    transition: background-color .3s;
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    height: 100vh;
+    background-color: var(--bac-color);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 12px; /* 竖向滚动条宽度 */
+    height: 13px; /* 横向滚动条宽度 */
+    background-color: #F5F5F5;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    /* 其实直接在  ::-webkit-scrollbar 中设置也能达到同样的视觉效果*/
+    /* -webkit-box-shadow: inset 0 0 6px rgba(177, 223, 117, 0.7); */
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/*::-webkit-scrollbar-button {*/
+/*    !* 设置了相关样式，按钮才会出来 *!*/
+/*    background-color: #F5F5F5;*/
+/*}*/
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(8, 182, 110, 0.616);*/
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F5F5F5;
+    -webkit-box-shadow: unset;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    /* 容器不被激活时的样式 */
+    background: #E0E0E0;
+}
+
+::-webkit-scrollbar-corner {
+    /* 两个滚动条交汇处边角的样式 */
+    background-color: #f34e12;
 }

@@ -18,5 +18,9 @@ export default {
                 library: 'vue-next'
             })],
         }),
-    ]
+    ],
+    server:{
+        port: 9090,
+        hot: true
+    }
 }

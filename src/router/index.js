@@ -3,8 +3,24 @@ import Index from "../pages/index.vue"
 import Main from "../pages/main.vue"
 
 const routes = [
-    {path: '/', component: Index},
-    {path: '/about', component: Main},
+    {
+        path: '/',
+        meta: {
+            icon: "",
+            title: "高效记账",
+            description: "入口"
+        },
+        component: Index
+    },
+    {
+        path: '/about',
+        meta: {
+            icon: "",
+            title: "关于",
+            description: "入口"
+        },
+        component: Main
+    },
 ]
 
 
@@ -15,4 +31,10 @@ export const router = createRouter({
     // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
     history: createWebHashHistory(),
     routes, // `routes: routes` 的缩写
+})
+
+router.afterEach((from, to, next) => {
+    const {meta} = from
+    window.document.title = meta?.title || "_记账版本V1"
+    next()
 })
