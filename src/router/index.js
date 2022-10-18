@@ -7,7 +7,7 @@ const routes = [
         path: '/',
         meta: {
             icon: "",
-            title: "高效记账",
+            title: "",
             description: "入口"
         },
         component: Index
@@ -35,6 +35,6 @@ export const router = createRouter({
 
 router.afterEach((from, to, next) => {
     const {meta} = from
-    window.document.title = meta?.title || "_记账版本V1"
+    window.document.title = meta?.title || "JobsAir‘s world"
     next()
 })

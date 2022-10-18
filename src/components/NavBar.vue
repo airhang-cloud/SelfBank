@@ -4,7 +4,7 @@
     <t-menu
         v-model:expanded="expanded"
         :theme="store.state.theme"
-        default-value="dash"
+        default-value="/usua-site"
         expand-mutex
         height="550px"
         :collapsed="collapsed"
@@ -12,34 +12,27 @@
       <template #logo>
         <img width="200" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo"/>
       </template>
-      <t-menu-item value="dash">
-        <template #icon>
-          <t-icon name="app"/>
-        </template>
-        面板中心
-      </t-menu-item>
-      <t-submenu value="paymanager">
-        <template #icon>
-          <t-icon name="layers"/>
-        </template>
-        <template #title>
-          <span>账单管理</span>
-        </template>
-        <t-menu-item value="3-1-1">
-          我的账本</t-menu-item>
-      </t-submenu>
-      <t-menu-item value="analysis">
-        <template #icon>
-          <t-icon name="cloud"/>
-        </template>
-        账单分析
-      </t-menu-item>
-      <t-menu-item value="personalized">
-        <template #icon>
-          <t-icon name="tools"/>
-        </template>
-        个性化配置
-      </t-menu-item>
+      <div v-for="nav in pathConfigs" :key="nav.path">
+        <t-menu-item v-if="!nav.subArr.length" :value="nav.path">
+          <template #icon>
+            <t-icon :name="nav.icon"/>
+          </template>
+          {{ nav.label }}
+        </t-menu-item>
+        <t-submenu v-else :value="nav.path">
+          <template #icon>
+            <t-icon :name="nav.icon"/>
+          </template>
+          <template #title>
+          <span>
+            {{ nav.label }}}
+          </span>
+          </template>
+          <t-menu-item v-for="item in nav.subArr" :key="item.path" :value="item.path">
+            {{ item.label }}
+          </t-menu-item>
+        </t-submenu>
+      </div>
     </t-menu>
   </div>
 </template>
@@ -64,9 +57,21 @@ const expanded2 = ref(['2']);
 
 const pathConfigs = [
   {
-    path: '/',
-    label: '',
-    icon: '',
+    path: '/usua-site',
+    label: '常用网站',
+    icon: 'internet',
+    subArr: []
+  },
+  {
+    path: '/have-fish',
+    label: '摸鱼网站',
+    icon: 'dashboard',
+    subArr: []
+  },
+  {
+    path: '/my-works',
+    label: '我的作品',
+    icon: 'tips',
     subArr: []
   }
 ]
