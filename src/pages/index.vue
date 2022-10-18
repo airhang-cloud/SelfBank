@@ -5,15 +5,16 @@
         <NavBar/>
       </t-aside>
       <t-content>
-        <!-- 夜间-->
-        <t-switch size="large" v-model="checked" @change="onChange"></t-switch>
-        <!-- 自定义按钮色-->
-        <t-color-picker-panel
-            v-model="color"
-            @change="handleChange"
-            @palette-bar-change="handlePaletteChange"
-            @recent-colors-change="handleRecentColorsChange"
-        />
+        <!--        &lt;!&ndash; 夜间&ndash;&gt;-->
+        <!--        <t-switch size="large" v-model="checked" @change="onChange"></t-switch>-->
+        <!--        &lt;!&ndash; 自定义按钮色&ndash;&gt;-->
+        <!--        <t-color-picker-panel-->
+        <!--            v-model="color"-->
+        <!--            @change="handleChange"-->
+        <!--            @palette-bar-change="handlePaletteChange"-->
+        <!--            @recent-colors-change="handleRecentColorsChange"-->
+        <!--        />-->
+        <router-view/>
       </t-content>
     </t-layout>
   </t-layout>

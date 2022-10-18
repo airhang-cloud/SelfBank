@@ -10,7 +10,41 @@ const routes = [
             title: "",
             description: "入口"
         },
-        component: Index
+        component: Index,
+        children: [
+            {
+                path: '/usua-site',
+                meta: {
+                    title: "常用网站",
+                    description: ""
+                },
+                component: Main
+            },
+            {
+                path: '/have-fish',
+                meta: {
+                    title: "摸鱼网站",
+                    description: ""
+                },
+                component: ()=> import("../pages/havefish.vue")
+            },
+            {
+                path: '/my-works',
+                meta: {
+                    title: "我的作品",
+                    description: ""
+                },
+                component: ()=> import("../pages/myworks.vue")
+            },
+            {
+                path: '/my-theme',
+                meta: {
+                    title: "个性化配置",
+                    description: ""
+                },
+                component: ()=> import("../pages/mytheme.vue")
+            },
+        ]
     },
     {
         path: '/about',
@@ -36,5 +70,4 @@ export const router = createRouter({
 router.afterEach((from, to, next) => {
     const {meta} = from
     window.document.title = meta?.title || "JobsAir‘s world"
-    next()
 })

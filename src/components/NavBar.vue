@@ -4,14 +4,15 @@
     <t-menu
         v-model:expanded="expanded"
         :theme="store.state.theme"
-        default-value="/usua-site"
+        :default-value="navValue"
         expand-mutex
         height="550px"
         :collapsed="collapsed"
+        @change="triggerChange"
     >
-      <template #logo>
-        <img width="200" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo"/>
-      </template>
+<!--      <template #logo>-->
+<!--        <img width="200" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo"/>-->
+<!--      </template>-->
       <div v-for="nav in pathConfigs" :key="nav.path">
         <t-menu-item v-if="!nav.subArr.length" :value="nav.path">
           <template #icon>
@@ -39,6 +40,7 @@
 
 <script setup>
 import {ref} from 'vue';
+import {router} from "../router";
 import store from "../store";
 
 const collapsed = ref(false);
@@ -73,6 +75,17 @@ const pathConfigs = [
     label: '我的作品',
     icon: 'tips',
     subArr: []
+  },
+  {
+    path: '/my-theme',
+    label: '个性化配置',
+    icon: 'edit',
+    subArr: []
   }
 ]
+const navValue = ref("/usua-site")
+const triggerChange = function (val) {
+  router.push(val)
+  // console.log("navValue", val)
+}
 </script>
