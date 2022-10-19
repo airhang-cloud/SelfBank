@@ -6,6 +6,7 @@ import {TDesignResolver} from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default {
+    base: "./",
     plugins: [
         vue(),
         AutoImport({

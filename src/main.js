@@ -2,6 +2,8 @@ import {createApp} from 'vue'
 import {router} from "./router/index.js";
 import './style.css'
 import "./themes/index.css"
+// 引入组件库全局样式资源
+import 'tdesign-vue-next/es/style/index.css';
 import store from "./store";
 import App from './App.vue'
 

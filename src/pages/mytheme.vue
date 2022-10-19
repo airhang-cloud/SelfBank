@@ -1,18 +1,29 @@
 <template>
-  <!-- 夜间-->
-  <t-switch size="large" v-model="checked" @change="onChange"></t-switch>
-  <!-- 自定义按钮色-->
-  <t-color-picker-panel
-      v-model="color"
-  />
+  <PaneBox>
+    <t-form>
+      <t-form-item label="开启夜间模式">
+        <!-- 夜间-->
+        <t-switch size="large" v-model="checked" @change="onChange"></t-switch>
+      </t-form-item>
+
+      <t-form-item label="主题色配置">
+        <!-- 自定义按钮色-->
+        <t-color-picker-panel
+            v-model="color"
+        />
+      </t-form-item>
+    </t-form>
+  </PaneBox>
 </template>
 
 <script>
 import {ref, watch} from "vue"
 import store from "../store";
+import PaneBox from "../components/PaneBox.vue"
 
 export default {
   name: "mytheme",
+  components: {PaneBox},
   setup() {
     const checked = ref(false)
     const color = ref("#0052d9")

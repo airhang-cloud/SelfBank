@@ -54,7 +54,7 @@ watch(color, (val) => {
 <style scoped>
 .honnr-box {
   width: 100%;
-  background-color: yellow;
+  /*background-color: yellow;*/
   height: 100%
 }
 </style>
