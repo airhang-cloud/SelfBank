@@ -44,6 +44,14 @@ const routes = [
                 },
                 component: ()=> import("../pages/mytheme.vue")
             },
+            {
+                path: '/knowledge',
+                meta: {
+                    title: "知识",
+                    description: ""
+                },
+                component: ()=> import("../pages/knowledge.vue")
+            },
         ]
     },
     {

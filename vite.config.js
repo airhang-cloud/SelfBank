@@ -22,6 +22,11 @@ export default {
     ],
     server:{
         port: 9090,
-        hot: true
+        hot: true,
+        proxy: {
+           ["/api"]: {
+               target: "http://192.168.1.9:3000"
+           }
+        }
     }
 }

@@ -81,6 +81,12 @@ const pathConfigs = [
     label: '个性化配置',
     icon: 'edit',
     subArr: []
+  },
+  {
+    path: '/knowledge',
+    label: '知识',
+    icon: 'unfold-less',
+    subArr: []
   }
 ]
 const navValue = ref("/usua-site")
